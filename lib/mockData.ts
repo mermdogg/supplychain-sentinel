@@ -1,0 +1,175 @@
+import { Supplier, DisruptionAlert, RiskTrendPoint } from "@/types";
+
+export const mockSuppliers: Supplier[] = [
+  {
+    id: "sup-001",
+    name: "TaiwanSemi Precision",
+    country: "Taiwan",
+    industry: "Semiconductors",
+    product: "Microprocessors",
+    criticality: "High",
+    riskScore: 82,
+    riskLevel: "Critical",
+    aiSummary:
+      "Elevated geopolitical tension in the Taiwan Strait combined with single-source dependency creates critical supply exposure. Recommend immediate dual-sourcing evaluation.",
+    riskFactors: ["Geopolitical tension", "Single-source dependency", "Export control risk"],
+    recommendedActions: [
+      "Identify alternative suppliers in South Korea or Germany",
+      "Increase safety stock by 90 days",
+      "Establish a supply continuity protocol",
+    ],
+    createdAt: "2024-01-15T10:00:00Z",
+    lat: 25.0329694,
+    lng: 121.5654177,
+  },
+  {
+    id: "sup-002",
+    name: "Volkov Titanium Works",
+    country: "Russia",
+    industry: "Raw Materials",
+    product: "Titanium Alloys",
+    criticality: "High",
+    riskScore: 91,
+    riskLevel: "Critical",
+    aiSummary:
+      "Active sanctions and export restrictions severely limit procurement options. This supplier poses immediate program risk for structural component programs.",
+    riskFactors: ["Active sanctions", "Export restrictions", "Payment blockades"],
+    recommendedActions: [
+      "Transition to VSMPO-AVISMA alternatives in allied nations",
+      "Qualify domestic titanium suppliers",
+      "Review contract force majeure clauses",
+    ],
+    createdAt: "2024-01-20T08:00:00Z",
+    lat: 55.7558,
+    lng: 37.6173,
+  },
+  {
+    id: "sup-003",
+    name: "MexiCraft Avionics",
+    country: "Mexico",
+    industry: "Avionics",
+    product: "Wire Harnesses",
+    criticality: "Medium",
+    riskScore: 34,
+    riskLevel: "Low",
+    aiSummary:
+      "Stable supplier with nearshore advantages. Minor labor and logistics risks present but manageable. USMCA trade environment is favorable.",
+    riskFactors: ["Labor cost inflation", "Border logistics variability"],
+    recommendedActions: [
+      "Monitor labor market conditions quarterly",
+      "Maintain 30-day buffer inventory",
+    ],
+    createdAt: "2024-02-01T09:00:00Z",
+    lat: 19.4326,
+    lng: -99.1332,
+  },
+  {
+    id: "sup-004",
+    name: "ShenzhenTech Components",
+    country: "China",
+    industry: "Electronics",
+    product: "PCBs & Passive Components",
+    criticality: "High",
+    riskScore: 73,
+    riskLevel: "High",
+    aiSummary:
+      "Export control tightening under BIS regulations creates procurement uncertainty. Concentration risk is high given volume dependency on this supplier.",
+    riskFactors: ["Export control exposure", "Tariff escalation risk", "Concentration risk"],
+    recommendedActions: [
+      "Qualify Vietnamese or Thai alternative suppliers",
+      "Review ITAR/EAR compliance on all parts",
+      "Reduce volume concentration below 40%",
+    ],
+    createdAt: "2024-02-10T11:00:00Z",
+    lat: 22.5431,
+    lng: 114.0579,
+  },
+  {
+    id: "sup-005",
+    name: "Nordic Composites AS",
+    country: "Norway",
+    industry: "Advanced Materials",
+    product: "Carbon Fiber Panels",
+    criticality: "Medium",
+    riskScore: 21,
+    riskLevel: "Low",
+    aiSummary:
+      "Low-risk NATO-aligned supplier with strong quality certifications. Favorable geopolitical environment. Recommend maintaining as preferred supplier.",
+    riskFactors: ["Currency exchange exposure", "Long lead times"],
+    recommendedActions: [
+      "Lock in annual pricing contracts",
+      "Monitor EUR/USD exchange rate quarterly",
+    ],
+    createdAt: "2024-02-15T14:00:00Z",
+    lat: 59.9139,
+    lng: 10.7522,
+  },
+  {
+    id: "sup-006",
+    name: "IndoElec Manufacturing",
+    country: "India",
+    industry: "Electronics",
+    product: "Power Modules",
+    criticality: "Low",
+    riskScore: 44,
+    riskLevel: "Medium",
+    aiSummary:
+      "Emerging supplier with moderate risk profile. Infrastructure reliability and monsoon-season disruptions are recurring concerns.",
+    riskFactors: ["Infrastructure reliability", "Seasonal logistics disruption", "Quality consistency"],
+    recommendedActions: [
+      "Conduct on-site quality audit",
+      "Establish alternative logistics routes for monsoon season",
+    ],
+    createdAt: "2024-03-01T10:00:00Z",
+    lat: 28.6139,
+    lng: 77.209,
+  },
+];
+
+export const mockAlerts: DisruptionAlert[] = [
+  {
+    id: "alert-001",
+    title: "Taiwan Strait Military Exercises — Semiconductor Shipment Delays",
+    description:
+      "PLA military exercises in the Taiwan Strait are disrupting commercial shipping lanes. Semiconductor shipments from TaiwanSemi Precision may face 2–4 week delays.",
+    severity: "Critical",
+    affectedRegion: "East Asia",
+    date: "2024-03-12T06:00:00Z",
+    suppliersAffected: 2,
+  },
+  {
+    id: "alert-002",
+    title: "New BIS Export Controls on Advanced Semiconductors",
+    description:
+      "Bureau of Industry and Security issued updated Export Administration Regulations affecting Class B semiconductor procurement from PRC-based entities.",
+    severity: "High",
+    affectedRegion: "China",
+    date: "2024-03-10T14:00:00Z",
+    suppliersAffected: 1,
+  },
+  {
+    id: "alert-003",
+    title: "Mexico Border Crossing Delays — Laredo Port of Entry",
+    description:
+      "CBP enhanced inspection protocols at Laredo are adding 24–48 hour delays to northbound commercial shipments.",
+    severity: "Medium",
+    affectedRegion: "North America",
+    date: "2024-03-08T09:00:00Z",
+    suppliersAffected: 1,
+  },
+];
+
+export const mockRiskTrend: RiskTrendPoint[] = [
+  { date: "Jan", score: 52 },
+  { date: "Feb", score: 55 },
+  { date: "Mar", score: 49 },
+  { date: "Apr", score: 61 },
+  { date: "May", score: 58 },
+  { date: "Jun", score: 67 },
+  { date: "Jul", score: 63 },
+  { date: "Aug", score: 71 },
+  { date: "Sep", score: 68 },
+  { date: "Oct", score: 74 },
+  { date: "Nov", score: 69 },
+  { date: "Dec", score: 72 },
+];
